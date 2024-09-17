@@ -25,7 +25,7 @@ public class DepartamentoController {
         }
     }
 
-    @GetMapping("/{id]")
+    @GetMapping("/{id}")
     public ResponseEntity<?> listarDepartamentosId(@PathVariable Long id){
         try{
             return  ResponseEntity.ok(departamentoService.buscarDepartamentoId(id));
