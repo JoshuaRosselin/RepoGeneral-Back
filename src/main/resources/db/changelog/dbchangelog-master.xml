@@ -28,6 +28,23 @@
                                  constraintName="fk_departamento_pais"/>
     </changeSet>
 
+    <changeSet id="create-table-municipio" author="Grupo 2 : Hernán Misael López Pérez">
+        <createTable tableName="municipio" remarks="Es la tabla de municipio">
+            <column name="municipio_id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="nombre" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="departamento_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="municipio" baseColumnNames="departamento_id"
+                                 referencedTableName="departamento" referencedColumnNames="departamento_id"
+                                 constraintName="fk_municipio_departamento"/>
+    </changeSet>
+
     <changeSet id="insert-data-pais" author="Grupo1(Carlos Altan, Joshua Rosselin)">
         <insert tableName="pais">
             <column name="nombre" value="Guatemala"/>
@@ -41,4 +58,10 @@
         </insert>
     </changeSet>
 
+    <changeSet id="insert-data-municipio" author="Grupo 2 : Hernán Misael López Pérez">
+        <insert tableName="municipio">
+            <column name="nombre" value="Mixco"/>
+            <column name="departamento_id" value="1"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

@@ -10,5 +10,5 @@ services:
       - "5432:5432"
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_PASSWORD=Misael27/2005
       - POSTGRES_DB=exercise
