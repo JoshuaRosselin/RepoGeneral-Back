@@ -51,36 +51,22 @@
         </insert>
     </changeSet>
 
-    <changeSet id="tabla_persona" author="Weslly Cabrera">
-        <createTable tableName="persona">
-            <column name="id_persona" type="BIGINT" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false" unique="true"/>
+    <changeSet id="create-table-user" author="Douglas Alvarado">
+        <createTable remarks="remarks"
+                tableName="user">
+            <column name="user_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="nombre" type="VARCHAR(50)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="id_direccion" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="id_tipo_documento" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
+            <column name="username" type="varchar(50)"/>
+            <column name="password" type="varchar(100)"/>
         </createTable>
     </changeSet>
 
-    <!--<changeSet id="FK_persona" author="Weslly Cabrera">
-        <addForeignKeyConstraint baseTableName="user"
-                                 baseColumnNames="id_tipo_documento"
-                                 constraintName="user_documento"
-                                 referencedTableName="tipo_documento"
-                                 referencedColumnNames="id_tipo_documento"
-        />
-
-        <addForeignKeyConstraint baseTableName="user"
-                                 baseColumnNames="id_direccion"
-                                 constraintName="user_direccion"
-                                 referencedTableName="direccion"
-                                 referencedColumnNames="id_direccion"
-        />
-    </changeSet>-->
+    <changeSet id="alter-table-user" author="echamale">
+        <renameTable oldTableName="user" newTableName="users"/>
+    </changeSet>
+    
+    <changeSet id="drop-users" author="echamale">
+        <dropTable tableName="users"/>
+    </changeSet>
 </databaseChangeLog>

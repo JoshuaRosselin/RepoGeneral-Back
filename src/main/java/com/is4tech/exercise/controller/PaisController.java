@@ -2,6 +2,7 @@ package com.is4tech.exercise.controller;
 
 import com.is4tech.exercise.model.Pais;
 import com.is4tech.exercise.service.PaisService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RestController
 @RequestMapping("/pais")
+@SecurityRequirement(name = "bearerAuth") //nombre del esquema que se debe utilizar en los endpoints
 public class PaisController {
 
     @Autowired

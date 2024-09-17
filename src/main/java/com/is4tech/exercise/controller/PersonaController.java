@@ -2,6 +2,7 @@ package com.is4tech.exercise.controller;
 
 import com.is4tech.exercise.model.Persona;
 import com.is4tech.exercise.service.PersonaService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import java.util.Optional;
 @Controller
 @RestController
 @RequestMapping("/persona")
+@SecurityRequirement(name = "bearerAuth") //nombre del esquema que se debe utilizar en los endpoints
 public class PersonaController {
 
     @Autowired
