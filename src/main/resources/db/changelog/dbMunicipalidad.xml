@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="001" author="Grupo2(Misael Lopez)">
+        <createTable tableName="municipio" remarks="Es la tabla de municipio">
+           <column name="municipio_id" type="int" autoIncrement="true">
+               <constraints nullable="false" unique="true" primaryKey="true"/>
+           </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="departamento_id" type="bigint"></column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="002" author="gerson chuquiej">
+        <createTable tableName="direccion">
+            <column name="direccionId" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="calle" type="varchar(255)"/>
+            <column name="numberHome" type="varchar(255)"/>
+            <column name="idMunicipio" type="bigint"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="003" author="Gerson Chuquiej">
+        <insert tableName="direccion">
+            <column name="calle" value="Calle Falsa"/>
+            <column name="numberHome" value="123"/>
+            <column name="idMunicipio" value="1"/>
+        </insert>
+
+        <insert tableName="direccion">
+            <column name="calle" value="Avenida tierra colorada"/>
+            <column name="numberHome" value="742"/>
+            <column name="idMunicipio" value="2"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog >
