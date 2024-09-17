@@ -4,4 +4,15 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
+    <changeSet id="create-table-user" author="Douglas Alvarado">
+        <createTable remarks="remarks"
+                tableName="user">
+            <column name="user_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="varchar(50)"/>
+            <column name="password" type="varchar(100)"/>
+        </createTable>
+    </changeSet>
+    
 </databaseChangeLog>

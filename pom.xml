@@ -7,7 +7,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.3.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+	</parent> 
 	<groupId>com.is4tech</groupId>
 	<artifactId>exercise</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -67,6 +67,23 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.11.5</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.11.5</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -82,6 +99,18 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<configuration>
+					<propertyFile>src/main/resources/application.properties</propertyFile>
+					<propertyFileWillOverride>true</propertyFileWillOverride>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
