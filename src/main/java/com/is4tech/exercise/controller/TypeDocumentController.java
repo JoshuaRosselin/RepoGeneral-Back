@@ -1,6 +1,6 @@
 package com.is4tech.exercise.controller;
 
-import com.is4tech.exercise.entity.TypeDocument;
+import com.is4tech.exercise.model.TypeDocument;
 import com.is4tech.exercise.service.TypeDocumentService;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

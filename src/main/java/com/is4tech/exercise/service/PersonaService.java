@@ -1,6 +1,6 @@
-package com.is4tech.exercise.services;
+package com.is4tech.exercise.service;
 
-import com.is4tech.exercise.entities.Persona;
+import com.is4tech.exercise.model.Persona;
 
 import java.util.List;
 import java.util.Optional;

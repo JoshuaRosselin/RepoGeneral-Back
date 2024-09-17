@@ -1,7 +1,7 @@
 package com.is4tech.exercise.controller;
 
-import com.is4tech.exercise.entities.Persona;
-import com.is4tech.exercise.services.PersonaService;
+import com.is4tech.exercise.model.Persona;
+import com.is4tech.exercise.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

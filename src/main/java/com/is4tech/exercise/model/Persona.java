@@ -1,4 +1,4 @@
-package com.is4tech.exercise.entities;
+package com.is4tech.exercise.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

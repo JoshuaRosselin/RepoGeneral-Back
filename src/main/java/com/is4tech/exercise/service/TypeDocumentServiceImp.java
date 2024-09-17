@@ -1,6 +1,6 @@
 package com.is4tech.exercise.service;
 
-import com.is4tech.exercise.entity.TypeDocument;
+import com.is4tech.exercise.model.TypeDocument;
 import com.is4tech.exercise.repository.TypeDocumentRepository;
 import java.util.List;
 import java.util.Optional;

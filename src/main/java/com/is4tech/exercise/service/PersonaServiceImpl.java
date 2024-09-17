@@ -1,7 +1,7 @@
-package com.is4tech.exercise.services;
+package com.is4tech.exercise.service;
 
-import com.is4tech.exercise.entities.Persona;
-import com.is4tech.exercise.repositories.PersonaRepository;
+import com.is4tech.exercise.model.Persona;
+import com.is4tech.exercise.repository.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
