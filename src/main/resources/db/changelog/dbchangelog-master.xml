@@ -69,4 +69,28 @@
     <changeSet id="drop-users" author="echamale">
         <dropTable tableName="users"/>
     </changeSet>
+
+    <changeSet id="create-table-direccion" author="gerson chuquiej">
+        <createTable tableName="direccion">
+            <column name="direccion_id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="calle" type="varchar(255)"/>
+            <column name="number_home" type="varchar(255)"/>
+            <column name="id_municipio" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="direccion"
+                                 baseColumnNames="id_municipio"
+                                 referencedTableName="municipio"
+                                 referencedColumnNames="municipio_id"
+                                 constraintName="fk_direccion_municipio"/>
+    </changeSet>
+
+    <changeSet id="insert-data-direccion" author="Gerson Chuquiej">
+        <insert tableName="direccion">
+            <column name="calle" value="Tierra colorada"/>
+            <column name="number_home" value="123"/>
+            <column name="id_municipio" value="1"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
